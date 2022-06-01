@@ -1,0 +1,15 @@
+.docker
+.idea/
+.prettierignore
+.vscode/
+node_modules/
+node_modules/*
+.idea/
+.docker/
+venv/
+.vs/
+/backend/play/
+.DS_STORE/*
+.DS_STORE
+build/
+frontend/.env

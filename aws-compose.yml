@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  client:
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-2
+        awslogs-stream: frontend
+        awslogs-group: shift2go
+        tag: "{{.ImageName}}/{{.Name}}/{{.ID}}"
+    ports:
+      - "80:80"
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - API_URL=http://3.143.59.184/api
+    restart: on-failure
+    container_name: client
